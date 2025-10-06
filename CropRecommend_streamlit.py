@@ -15,7 +15,7 @@ st.title("Crop Recommendation using Machine Learning")
 select_value = st.sidebar.radio("Menu", options=["Home", "Data Upload", "Data Preprocess","Visualizations","Model Training", "Testing", "Evaluation"])
 
 # Load the dataset
-data = pd.read_csv(r"C:\Users\shaik\OneDrive\Desktop\My_PROJECT\Crop_recommendation.csv")
+data = pd.read_csv("Crop_recommendation.csv")
 
 if select_value == "Data Upload":
     st.subheader("Uploaded Data Preview")
@@ -120,3 +120,4 @@ if select_value == "Testing":
         output = model.predict(xnew)
         predicted_crop = le.inverse_transform(output)[0]
         st.success(f"Recommended Crop: {predicted_crop}")
+
